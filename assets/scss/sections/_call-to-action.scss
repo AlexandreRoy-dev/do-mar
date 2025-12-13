@@ -1,0 +1,270 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Call To Action Section
+--------------------------------------------------------------*/
+.call-to-action {
+  background: var(--surface-color);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, color-mix(in srgb, var(--accent-color), transparent 98%) 0%, color-mix(in srgb, var(--heading-color), transparent 97%) 100%);
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta-hero-content {
+    .badge-wrapper {
+      margin-bottom: 2rem;
+
+      .cta-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--accent-color);
+        color: var(--contrast-color);
+        padding: 8px 20px;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        font-weight: 600;
+
+        i {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    h2 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      color: var(--heading-color);
+
+      @media (max-width: 992px) {
+        font-size: 2.8rem;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 2.2rem;
+      }
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: color-mix(in srgb, var(--default-color), transparent 25%);
+      margin-bottom: 2.5rem;
+    }
+
+    .feature-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .highlight-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        i {
+          color: var(--accent-color);
+          font-size: 1.1rem;
+          flex-shrink: 0;
+        }
+
+        span {
+          font-size: 1rem;
+          color: var(--default-color);
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .cta-form-section {
+    .form-container {
+      background: var(--surface-color);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 25px 80px color-mix(in srgb, var(--default-color), transparent 88%);
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 90%);
+
+      @media (max-width: 768px) {
+        padding: 30px 25px;
+      }
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 2rem;
+
+      h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--heading-color);
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        color: color-mix(in srgb, var(--default-color), transparent 30%);
+        font-size: 1rem;
+        margin: 0;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 15px 20px;
+        border: 2px solid color-mix(in srgb, var(--default-color), transparent 85%);
+        border-radius: 10px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        color: var(--default-color);
+        background-color: var(--surface-color);
+
+        &:focus {
+          outline: none;
+          border-color: var(--accent-color);
+          box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color), transparent 90%);
+        }
+
+        &::placeholder {
+          color: color-mix(in srgb, var(--default-color), transparent 60%);
+        }
+      }
+
+      select {
+        cursor: pointer;
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+    }
+
+    .form-actions {
+      margin-top: 2rem;
+      text-align: center;
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--accent-color);
+        color: var(--contrast-color);
+        border: none;
+        padding: 15px 35px;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+
+        &:hover {
+          background: color-mix(in srgb, var(--accent-color), black 15%);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 60%);
+        }
+
+        i {
+          font-size: 1.2rem;
+        }
+      }
+
+      .contact-alternative {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+
+        span {
+          font-size: 0.9rem;
+          color: color-mix(in srgb, var(--default-color), transparent 40%);
+        }
+
+        .phone-link {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          color: var(--accent-color);
+          font-weight: 600;
+          font-size: 1.1rem;
+          text-decoration: none;
+          transition: all 0.3s ease;
+
+          &:hover {
+            color: color-mix(in srgb, var(--accent-color), black 15%);
+          }
+
+          i {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+    .trust-indicators {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+
+      .trust-item {
+        text-align: center;
+
+        .trust-icon {
+          margin-bottom: 10px;
+
+          i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+          }
+        }
+
+        .trust-content {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+
+          .trust-number {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            line-height: 1;
+          }
+
+          .trust-label {
+            font-size: 0.8rem;
+            color: color-mix(in srgb, var(--default-color), transparent 40%);
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    .cta-hero-content {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+  }
+}

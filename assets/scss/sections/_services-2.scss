@@ -1,0 +1,286 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Services 2 Section
+--------------------------------------------------------------*/
+.services-2 {
+  padding-top: 60px;
+  padding-bottom: 2px;
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 50px;
+    }
+  }
+
+  .service-item {
+    background: var(--surface-color);
+    padding: 40px 30px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg,
+          color-mix(in srgb, var(--accent-color), transparent 60%),
+          var(--accent-color));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 60px color-mix(in srgb, var(--default-color), transparent 88%);
+      border-color: color-mix(in srgb, var(--accent-color), transparent 80%);
+
+      &::before {
+        transform: scaleX(1);
+      }
+
+      .service-number {
+        color: var(--accent-color);
+        transform: scale(1.1);
+      }
+
+      .service-icon {
+        transform: scale(1.05);
+        background: var(--accent-color);
+
+        i {
+          color: var(--contrast-color);
+        }
+      }
+
+      .service-cta {
+        transform: translateX(8px);
+        color: var(--accent-color);
+      }
+    }
+
+    &.featured {
+      background: linear-gradient(135deg,
+          var(--surface-color),
+          color-mix(in srgb, var(--surface-color), var(--accent-color) 3%));
+      border-color: var(--accent-color);
+      transform: scale(1.02);
+
+      .featured-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: var(--accent-color);
+        color: var(--contrast-color);
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      &::before {
+        transform: scaleX(1);
+      }
+
+      .service-number {
+        color: var(--accent-color);
+      }
+    }
+
+    .service-number {
+      font-size: 14px;
+      font-weight: 300;
+      color: color-mix(in srgb, var(--default-color), transparent 40%);
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      letter-spacing: 2px;
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      background: color-mix(in srgb, var(--accent-color), transparent 90%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+      transition: all 0.3s ease;
+
+      i {
+        font-size: 24px;
+        color: var(--accent-color);
+        transition: color 0.3s ease;
+      }
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: 300;
+      color: var(--heading-color);
+      margin-bottom: 15px;
+      line-height: 1.3;
+    }
+
+    p {
+      color: color-mix(in srgb, var(--default-color), transparent 25%);
+      line-height: 1.7;
+      margin-bottom: 25px;
+      font-size: 15px;
+    }
+
+    .service-cta {
+      display: inline-flex;
+      align-items: center;
+      color: color-mix(in srgb, var(--default-color), transparent 20%);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+
+      span {
+        margin-right: 8px;
+      }
+
+      i {
+        font-size: 12px;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover i {
+        transform: translateX(3px);
+      }
+    }
+  }
+
+  .services-footer {
+    background: var(--surface-color);
+    padding: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+      padding: 40px 30px;
+    }
+
+    .footer-content {
+      flex: 1;
+
+      h4 {
+        font-size: 28px;
+        font-weight: 300;
+        color: var(--heading-color);
+        margin-bottom: 8px;
+      }
+
+      p {
+        color: color-mix(in srgb, var(--default-color), transparent 30%);
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+    }
+
+    .primary-cta {
+      background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), var(--heading-color) 10%));
+      color: var(--contrast-color);
+      padding: 18px 35px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 70%);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 40px color-mix(in srgb, var(--accent-color), transparent 60%);
+        color: var(--contrast-color);
+      }
+
+      i {
+        margin-left: 10px;
+        font-size: 14px;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover i {
+        transform: translateX(3px);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .service-item {
+      padding: 30px 25px;
+
+      h3 {
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .services-footer .footer-content h4 {
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .services-grid {
+      gap: 25px;
+    }
+
+    .service-item {
+      padding: 25px 20px;
+
+      .service-icon {
+        width: 50px;
+        height: 50px;
+
+        i {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .services-footer {
+      padding: 30px 20px;
+
+      .primary-cta {
+        padding: 15px 25px;
+        font-size: 14px;
+      }
+    }
+  }
+}

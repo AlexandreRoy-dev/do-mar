@@ -1,0 +1,168 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about {
+  background-color: color-mix(in srgb, var(--background-color), var(--surface-color) 40%);
+
+  .content {
+    .section-heading {
+      font-size: 2.5rem;
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--heading-color);
+      letter-spacing: -0.02em;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+
+    .lead-text {
+      font-size: 1.25rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--default-color);
+    }
+
+    .description-text {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: color-mix(in srgb, var(--default-color), transparent 20%);
+    }
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .stat-item {
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 200;
+        color: var(--accent-color);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: var(--heading-color);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+    }
+  }
+
+  .cta-section {
+    .cta-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--accent-color);
+      font-weight: 400;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: var(--heading-color);
+        transform: translateX(5px);
+      }
+
+      i {
+        transition: transform 0.3s ease;
+      }
+
+      &:hover i {
+        transform: translateX(5px);
+      }
+    }
+  }
+
+  .image-section {
+    position: relative;
+
+    .main-image {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px color-mix(in srgb, var(--default-color), transparent 85%);
+
+      img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover img {
+        transform: scale(1.02);
+      }
+    }
+
+    .floating-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background-color: var(--surface-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 15px 40px color-mix(in srgb, var(--default-color), transparent 80%);
+
+      @media (max-width: 768px) {
+        bottom: -15px;
+        right: -15px;
+        padding: 1rem;
+      }
+
+      .badge-content {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        i {
+          font-size: 2rem;
+          color: var(--accent-color);
+        }
+
+        .badge-text {
+          .badge-title {
+            display: block;
+            font-weight: 500;
+            color: var(--heading-color);
+            font-size: 1rem;
+            line-height: 1.2;
+          }
+
+          .badge-subtitle {
+            display: block;
+            font-size: 0.85rem;
+            color: color-mix(in srgb, var(--default-color), transparent 30%);
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    .content {
+      margin-bottom: 3rem;
+    }
+
+    .image-section .floating-badge {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      margin-top: 2rem;
+      display: inline-block;
+    }
+  }
+}
