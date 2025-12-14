@@ -4840,3 +4840,41 @@ section,
 .hero-overlay {
   background: rgba(5, 20, 35, 0.6) !important;
 }
+.hero-stats {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-stats::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  z-index: 0;
+}
+
+.hero-stats > * {
+  position: relative;
+  z-index: 1;
+}
+
+.header .logo img {
+  max-height: none !important;
+}
+
+.header .logo img {
+  height: 80px;
+  width: auto;
+}
+
+@media (max-width: 991px) {
+  .header .logo img {
+    height: 60px;
+  }
+}
+.footer .footer-logo,
+.footer .logo img {
+  max-height: 80px;
+  height: auto;
+  width: auto;
+}
