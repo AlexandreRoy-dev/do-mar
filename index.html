@@ -94,8 +94,8 @@
             </p>
             <div class="hero-actions" data-aos="fade-up" data-aos-delay="200">
               <a href="#contact" class="btn-primary">Demander une soumission</a>
-              <a href="#services" class="btn-secondary glightbox">
-                
+              
+              <a href="#services" class="btn-secondary">
                 <span>Découvrir nos expertises</span>
               </a>
             </div>
@@ -306,7 +306,7 @@ Aujourd’hui, sous une même identité familiale, nous réunissons des services
           <h4>Besoin d’un service adapté à votre situation&nbsp;?</h4>
           <p>Notre équipe est là pour vous conseiller et vous proposer une solution sur mesure.</p>
           <a href="#contact" class="btn-primary">
-            <span>Nous contacter</span>
+            <span>Demander une soumission</span>
             <i class="bi bi-arrow-right"></i>
           </a>
         </div>
@@ -315,75 +315,372 @@ Aujourd’hui, sous une même identité familiale, nous réunissons des services
 
   </div>
 
-</section>```
+</section>
 
+<style>
+  /* 1. Allow the slide to stretch to the height of the tallest item in the row */
+  .swiper-slide {
+    height: auto !important;
+    display: flex; /* Ensures the child fills the height */
+  }
 
+  /* 2. Force the card to take up 100% of that available height */
+  .testimonial-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes content apart */
+  }
+</style>
 
+<section id="testimonials" class="testimonials section" style="background-color: #fff;">
 
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Ce que nos clients disent</h2>
+    <p>La satisfaction de nos clients est notre meilleure publicité. Voici quelques témoignages récents.</p>
+  </div><div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="swiper init-swiper">
+      <script type="application/json" class="swiper-config">
+        {
+          "loop": true,
+          "speed": 600,
+          "autoplay": {
+            "delay": 5000
+          },
+          "slidesPerView": "auto",
+          "pagination": {
+            "el": ".swiper-pagination",
+            "type": "bullets",
+            "clickable": true
+          },
+          "breakpoints": {
+            "320": {
+              "slidesPerView": 1,
+              "spaceBetween": 40
+            },
+            "768": {
+              "slidesPerView": 2,
+              "spaceBetween": 20
+            },
+            "1200": {
+              "slidesPerView": 3,
+              "spaceBetween": 30
+            }
+          }
+        }
+      </script>
+
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="testimonial-item p-4 border rounded-4 shadow-sm bg-white">
+            <div>
+              <div class="stars mb-3">
+                <i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i>
+              </div>
+              <p class="mb-4 text-muted fst-italic">
+                « Équipe super compétente et sympathique. Sont venus rapidement, on avait un trouble de pompe à eau qui ne fonctionnait plus... Le trouble était électrique, ils n'ont pas changé la pompe. Ils ont pris le temps de nous expliquer. »
+              </p>
+            </div>
+            <div class="d-flex align-items-center mt-auto">
+              <div class="profile">
+                <h5 class="mb-0 fw-bold fs-6">Micheline Potvin</h5>
+                <span class="small text-muted">Local Guide • Il y a 3 ans</span>
+              </div>
+              <div class="ms-auto">
+                <i class="bi bi-google fs-4 text-muted opacity-50"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testimonial-item p-4 border rounded-4 shadow-sm bg-white">
+            <div>
+              <div class="stars mb-3">
+                <i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i>
+                <span class="badge bg-light text-dark ms-2 border">Nouveau</span>
+              </div>
+              <p class="mb-4 text-muted fst-italic">
+                « Excellent service: entretien adoucisseur et osmose, a pris le temps de bien m'expliquer le fonctionnement et répondre à mes inquiétudes en lien avec l'arsenic dans l'eau. Je me demandais si besoin d'un nouveau système... »
+              </p>
+            </div>
+            <div class="d-flex align-items-center mt-auto">
+              <div class="profile">
+                <h5 class="mb-0 fw-bold fs-6">David GT</h5>
+                <span class="small text-muted">Il y a 1 semaine</span>
+              </div>
+              <div class="ms-auto">
+                <i class="bi bi-google fs-4 text-muted opacity-50"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testimonial-item p-4 border rounded-4 shadow-sm bg-white">
+            <div>
+              <div class="stars mb-3">
+                <i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i>
+              </div>
+              <p class="mb-4 text-muted fst-italic">
+                « Service incroyable! Rapide et efficace. J'aurais mis plus d'étoiles mais je suis limité à 5! Merci encore. Wooow! »
+              </p>
+            </div>
+            <div class="d-flex align-items-center mt-auto">
+              <div class="profile">
+                <h5 class="mb-0 fw-bold fs-6">Pascal Rodrigue</h5>
+                <span class="small text-muted">Local Guide • Il y a 1 an</span>
+              </div>
+              <div class="ms-auto">
+                <i class="bi bi-google fs-4 text-muted opacity-50"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testimonial-item p-4 border rounded-4 shadow-sm bg-white">
+            <div>
+              <div class="stars mb-3">
+                <i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i>
+              </div>
+              <p class="mb-4 text-muted fst-italic">
+                « On m’a donné un excellent service... on était le samedi en plus ! Les commis ont été très compréhensibles envers mon problème et ont fait leur possible pour régler le tout. Merci. »
+              </p>
+            </div>
+            <div class="d-flex align-items-center mt-auto">
+              <div class="profile">
+                <h5 class="mb-0 fw-bold fs-6">Yannick Bourque</h5>
+                <span class="small text-muted">Local Guide • Il y a 6 ans</span>
+              </div>
+              <div class="ms-auto">
+                <i class="bi bi-google fs-4 text-muted opacity-50"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testimonial-item p-4 border rounded-4 shadow-sm bg-white">
+            <div>
+              <div class="stars mb-3">
+                <i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i>
+              </div>
+              <p class="mb-4 text-muted fst-italic">
+                « J'ai fais vérifier ma pompe de spa, personnel très compétent, remplacer pointe et condensateur. Service très rapide, je recommande Do-Mar, je suis très satisfait. »
+              </p>
+            </div>
+            <div class="d-flex align-items-center mt-auto">
+              <div class="profile">
+                <h5 class="mb-0 fw-bold fs-6">Luc Potvin</h5>
+                <span class="small text-muted">Local Guide • Il y a 2 ans</span>
+              </div>
+              <div class="ms-auto">
+                <i class="bi bi-google fs-4 text-muted opacity-50"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="testimonial-item p-4 border rounded-4 shadow-sm bg-white">
+            <div>
+              <div class="stars mb-3">
+                <i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i>
+              </div>
+              <p class="mb-4 text-muted fst-italic">
+                « Très bien accueillie, service rapide, gens bien sympathiques, achat d’un nouveau moteur pour conduit de ventilation... bonnes explications pourquoi l’autre ne fonctionnait plus, très bien servie! »
+              </p>
+            </div>
+            <div class="d-flex align-items-center mt-auto">
+              <div class="profile">
+                <h5 class="mb-0 fw-bold fs-6">Linda Doyon</h5>
+                <span class="small text-muted">Local Guide • Il y a 2 ans</span>
+              </div>
+              <div class="ms-auto">
+                <i class="bi bi-google fs-4 text-muted opacity-50"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="row mt-5" data-aos="fade-up" data-aos-delay="400">
+      <div class="col-12 text-center">
+        <div class="p-4 rounded-4" style="background-color: rgba(20, 92, 143, 0.05);">
+          <h4 class="mb-3" style="color: #145c8f; font-size: 1.25rem;">Votre avis compte pour nous</h4>
+          <p class="mb-4 text-muted">Vous avez fait appel à nos services ? Partagez votre expérience avec la communauté.</p>
+          
+          <a href="https://www.google.com/search?q=Domar+Electrique+Inc+Reviews" 
+             target="_blank" 
+             class="btn btn-outline-primary rounded-pill px-4 py-2 fw-semibold"
+             style="border-color: #145c8f; color: #145c8f;">
+            <i class="bi bi-google me-2"></i>Laisser un avis sur Google
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section><script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof Swiper !== 'undefined') {
+      new Swiper('.init-swiper', {
+        loop: true,
+        speed: 600,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false
+        },
+        slidesPerView: 'auto',
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+          clickable: true
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 20
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
+          1200: {
+            slidesPerView: 3,
+            spaceBetween: 30
+          }
+        }
+      });
+    }
+  });
+</script>
+
+<!-- Finance Section -->
+<style>
+  /* Adds a subtle gradient to the main card for depth */
+  .finance-card-gradient {
+    background: linear-gradient(135deg, #145c8f 0%, #0f4369 100%);
+  }
+  
+  /* Creates a modern circle background for the icons */
+  .icon-box-circle {
+    width: 52px;
+    height: 52px;
+    background-color: rgba(20, 92, 143, 0.1); /* 10% opacity of your blue */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover effect for the list items */
+  .finance-feature-item:hover .icon-box-circle {
+    background-color: #145c8f;
+    color: #ffffff !important;
+  }
+  
+  .finance-feature-item:hover .icon-box-circle i {
+    color: #ffffff !important;
+  }
+</style>
 
 <section id="financement" class="financement section light-background">
 
   <div class="container section-title" data-aos="fade-up">
     <h2>Solutions de financement</h2>
     <p>Réalisez vos travaux maintenant et payez à votre rythme grâce à notre partenaire.</p>
-  </div><div class="container" data-aos="fade-up" data-aos-delay="100">
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
 
     <div class="row gy-5 align-items-center">
 
       <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
-        <h3>Financement abordable avec iFinance</h3>
-        <p class="lead">
+        <h3 class="fw-bold mb-3" style="color: #145c8f;">Financement abordable avec iFinance</h3>
+        <p class="lead mb-4 text-muted">
           Ne reportez pas des travaux essentiels pour votre approvisionnement en eau.
           Nous offrons des plans de paiement flexibles pour s'adapter à votre budget.
         </p>
         
-        <div class="finance-features mt-4">
+        <div class="finance-features">
           <ul class="list-unstyled">
-            <li class="mb-3 d-flex align-items-start">
-              <i class="bi bi-check-circle-fill text-primary me-3 fs-5"></i>
+            
+            <li class="mb-4 d-flex align-items-start finance-feature-item">
+              <div class="icon-box-circle me-3">
+                <i class="bi bi-lightning-charge-fill fs-5" style="color: #145c8f;"></i>
+              </div>
               <div>
-                <strong>Approbation rapide</strong>
-                <p class="mb-0 text-muted small">Processus simple et réponse en quelques minutes.</p>
+                <h5 class="fw-bold mb-1">Approbation rapide</h5>
+                <p class="mb-0 text-muted">Processus simple et réponse en quelques minutes.</p>
               </div>
             </li>
-            <li class="mb-3 d-flex align-items-start">
-              <i class="bi bi-check-circle-fill text-primary me-3 fs-5"></i>
+
+            <li class="mb-4 d-flex align-items-start finance-feature-item">
+              <div class="icon-box-circle me-3">
+                <i class="bi bi-calendar-check-fill fs-5" style="color: #145c8f;"></i>
+              </div>
               <div>
-                <strong>Termes flexibles</strong>
-                <p class="mb-0 text-muted small">Choisissez une période de remboursement qui vous convient.</p>
+                <h5 class="fw-bold mb-1">Termes flexibles</h5>
+                <p class="mb-0 text-muted">Choisissez une période de remboursement adaptée à votre réalité.</p>
               </div>
             </li>
-            <li class="mb-3 d-flex align-items-start">
-              <i class="bi bi-check-circle-fill text-primary me-3 fs-5"></i>
+
+            <li class="mb-4 d-flex align-items-start finance-feature-item">
+              <div class="icon-box-circle me-3">
+                <i class="bi bi-piggy-bank-fill fs-5" style="color: #145c8f;"></i>
+              </div>
               <div>
-                <strong>Taux compétitifs</strong>
-                <p class="mb-0 text-muted small">Des solutions financières claires et sans surprise.</p>
+                <h5 class="fw-bold mb-1">Taux compétitifs</h5>
+                <p class="mb-0 text-muted">Des solutions financières claires, transparentes et sans surprise.</p>
               </div>
             </li>
+
           </ul>
         </div>
         
-        
+        <div class="mt-2 p-3 rounded" style="background-color: rgba(20, 92, 143, 0.05); border-left: 4px solid #145c8f;">
+          <p class="fst-italic fw-bold mb-0" style="color: #145c8f;">
+            « iFinance d’abord. Paiement plus tard ! »
+          </p>
+        </div>
       </div>
 
       <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
-        <div class="card border-0 shadow-lg text-white text-center p-5" 
-             style="background-color: #1a2b4b; border-radius: 20px;">
+        <div class="card border-0 shadow-lg text-white text-center p-4 p-md-5 finance-card-gradient" 
+             style="border-radius: 24px; position: relative; overflow: hidden;">
           
-          <div class="card-body">
+          <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
+          
+          <div class="card-body position-relative">
             <div class="mb-4">
-              <h3 class="fw-bold" style="font-size: 2rem;">iFinance</h3> 
+               <h3 class="fw-bold text-white mb-0" style="font-size: 2.2rem; letter-spacing: -1px;">iFinance</h3> 
+              <span class="badge bg-light text-primary rounded-pill mt-2">Partenaire Certifié</span>
             </div>
 
-            <div class="qr-wrapper bg-white p-2 d-inline-block rounded mb-4">
-              <img src="assets/img/qr-code-placeholder.webp" alt="Scannez pour financer" style="width: 180px; height: 180px;">
+            <div class="qr-wrapper bg-white p-2 d-inline-block rounded-3 shadow mb-4" style="transform: rotate(-2deg);">
+              <img src="assets/img/qr.webp" alt="Scannez pour financer" style="width: 160px; height: 160px;">
             </div>
 
-            <h4 class="mb-3">Scannez pour appliquer</h4>
-            <p class="mb-4 text-white-50">Accédez au formulaire de demande sécurisé directement depuis votre mobile.</p>
+            <h4 class="mb-2 text-white fw-bold">Scannez pour appliquer</h4>
+            <p class="mb-4 text-white-50 small mx-auto" style="max-width: 400px;">
+              Accédez au formulaire de demande sécurisé directement depuis votre mobile.
+            </p>
 
-            <a href="#" class="btn btn-light btn-lg rounded-pill px-5 fw-bold text-primary">
-              Faire une demande
+            <a href="https://apply.ifinancecanada.com/24970" 
+               class="btn btn-light btn-lg rounded-pill px-5 fw-bold shadow-sm" 
+               style="color: #145c8f; transition: transform 0.2s;">
+              <i class="bi bi-arrow-right-circle-fill me-2"></i>Faire une demande
             </a>
           </div>
         </div>
@@ -393,7 +690,8 @@ Aujourd’hui, sous une même identité familiale, nous réunissons des services
 
   </div>
 
-</section>```
+</section>
+
 
 
 
@@ -555,7 +853,7 @@ Aujourd’hui, sous une même identité familiale, nous réunissons des services
 
   </div>
 
-</section>```
+</section>
 
 <!-- /Call To Action Section -->
 
