@@ -558,6 +558,8 @@ Aujourd’hui, sous une même identité familiale, nous réunissons des services
   });
 </script>
 
+
+<!--keep below for every pages-->
 <style>
   /* Adds a subtle gradient to the main card for depth */
   .finance-card-gradient {
@@ -687,12 +689,10 @@ Aujourd’hui, sous une même identité familiale, nous réunissons des services
 
 
 
-
-
 <style>
   /* Section Background */
   .call-to-action {
-    background-color: #f9fafb; /* Very light grey to make the white form pop */
+    background-color: #f9fafb;
     padding: 80px 0;
   }
 
@@ -741,12 +741,51 @@ Aujourd’hui, sous une même identité familiale, nous réunissons des services
     margin-right: 12px;
   }
 
+  /* --- NEW STYLES FOR CONTACT INFO IN SECTION --- */
+  .contact-info-wrapper {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .contact-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .contact-row i {
+    font-size: 1.4rem;
+    color: #145c8f;
+    flex-shrink: 0;
+  }
+
+  .contact-row h6 {
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #1a1a1a;
+  }
+
+  .contact-row p, .contact-row a {
+    color: #555;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    text-decoration: none;
+    line-height: 1.5;
+  }
+  
+  .contact-row a:hover {
+    color: #145c8f;
+    text-decoration: underline;
+  }
+  /* ----------------------------------------------- */
+
   /* Form Container (The Card) */
   .form-container {
     background: #ffffff;
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); /* Soft, deep shadow */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(0,0,0,0.02);
   }
 
@@ -769,7 +808,7 @@ Aujourd’hui, sous une même identité familiale, nous réunissons des services
   .form-control:focus {
     background-color: #ffffff;
     border-color: #145c8f;
-    box-shadow: 0 0 0 4px rgba(20, 92, 143, 0.1); /* Blue glow */
+    box-shadow: 0 0 0 4px rgba(20, 92, 143, 0.1);
   }
 
   /* Submit Button */
@@ -839,6 +878,53 @@ Aujourd’hui, sous une même identité familiale, nous réunissons des services
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
+  
+  /* Footer Specific Styles */
+  .footer-links-grid ul li {
+    margin-bottom: 14px;
+  }
+  
+  .footer-links-grid ul li a {
+    display: block;
+    line-height: 1.3;
+    color: #b0b0b0;
+    transition: all 0.3s ease;
+  }
+
+  .footer-links-grid ul li a:hover {
+    color: #fff;
+    padding-left: 5px;
+  }
+
+  /* New Footer Address Styles */
+  .footer-contact-details p {
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .footer-contact-details strong {
+    color: #fff;
+  }
+
+  .footer-contact-details a {
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-contact-details a:hover {
+    color: #fff;
+  }
+
+  .footer-hours-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
 </style>
 
 <section id="contact" class="call-to-action section">
@@ -877,7 +963,45 @@ Aujourd’hui, sous une même identité familiale, nous réunissons des services
               <span>Service résidentiel, commercial et agricole</span>
             </div>
           </div>
-        </div>
+
+          <div class="contact-info-wrapper">
+            
+            <div class="contact-row">
+              <i class="bi bi-geo-alt-fill"></i>
+              <div>
+                <h6>Notre adresse</h6>
+                <p>
+                  <strong>Do-Mar Électrique Inc.</strong><br>
+                  1136 King Est<br>
+                  Sherbrooke, Québec J1G 1E4
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <i class="bi bi-telephone-fill"></i>
+              <div>
+                <h6>Nous joindre</h6>
+                <p>
+                  <a href="tel:+18195632234">819-563-2234</a><br>
+                  <a href="mailto:info@do-marelectrique.com">info@do-marelectrique.com</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <i class="bi bi-clock-fill"></i>
+              <div>
+                <h6>Heures d’ouverture</h6>
+                <p>
+                  <strong>Lundi au jeudi :</strong> 8 h à 12 h et 13 h à 17 h<br>
+                  <strong>Vendredi :</strong> 8 h à 12 h et 13 h à 16 h
+                </p>
+              </div>
+            </div>
+
+          </div>
+          </div>
       </div>
 
       <div class="col-lg-6">
@@ -911,18 +1035,18 @@ Aujourd’hui, sous une même identité familiale, nous réunissons des services
                 </div>
 
                <div class="col-12">
-  <div class="form-group">
-    <select name="service" class="form-control" required>
-      <option value="">Service concerné</option>
-      <option value="Puits">Puits</option>
-      <option value="Pompes">Pompes</option>
-      <option value="Analyse et traitement d'eau">Analyse et traitement d'eau</option>
-      <option value="Poste de pompage">Poste de pompage</option>
-      <option value="Moteurs électriques">Moteurs électriques</option>
-      <option value="Autre">Autre</option>
-    </select>
-  </div>
-</div>
+                  <div class="form-group">
+                    <select name="service" class="form-control" required>
+                      <option value="">Service concerné</option>
+                      <option value="Puits">Puits</option>
+                      <option value="Pompes">Pompes</option>
+                      <option value="Analyse et traitement d'eau">Analyse et traitement d'eau</option>
+                      <option value="Poste de pompage">Poste de pompage</option>
+                      <option value="Moteurs électriques">Moteurs électriques</option>
+                      <option value="Autre">Autre</option>
+                    </select>
+                  </div>
+                </div>
 
                 <div class="col-12">
                   <div class="form-group">
@@ -945,7 +1069,7 @@ Aujourd’hui, sous une même identité familiale, nous réunissons des services
                   <span>Ou appelez-nous directement :</span>
                   <a href="tel:+18195632234" class="phone-link">
                     <i class="bi bi-telephone-fill me-1"></i>
-                    819&nbsp;563-2234
+                    819 563-2234
                   </a>
                 </div>
               </div>
@@ -997,24 +1121,6 @@ Aujourd’hui, sous une même identité familiale, nous réunissons des services
 
 </main>
 
-<style>
-  .footer-links-grid ul li {
-    margin-bottom: 14px; /* Adds space between different links */
-  }
-  
-  .footer-links-grid ul li a {
-    display: block;      /* Makes the link fill the width */
-    line-height: 1.3;    /* Keeps multi-line text closer together */
-    color: #b0b0b0;      /* Default color */
-    transition: all 0.3s ease;
-  }
-
-  .footer-links-grid ul li a:hover {
-    color: #fff;
-    padding-left: 5px;   /* Small movement on hover */
-  }
-</style>
-
 <footer id="footer" class="footer dark-background">
 
   <div class="container">
@@ -1037,34 +1143,28 @@ Aujourd’hui, sous une même identité familiale, nous réunissons des services
         </div>
       </div>
 
-      <div class="col-lg-6">
+      <div class="col-lg-4">
         <div class="footer-links-grid">
           <div class="row">
 
-            <div class="col-6 col-md-4">
+            <div class="col-6">
               <h5 class="mb-3 text-white">Entreprise</h5>
               <ul class="list-unstyled">
                 <li><a href="index.html#about">À propos</a></li>
                 <li><a href="index.html#services">Nos services</a></li>
                 <li><a href="index.html#contact">Nous joindre</a></li>
+                <li><a href="privacy.html">Confidentialité</a></li>
               </ul>
             </div>
 
-            <div class="col-6 col-md-4">
+            <div class="col-6">
               <h5 class="mb-3 text-white">Services</h5>
               <ul class="list-unstyled">
-                <li><a href="moteurs.html">Moteurs électriques</a></li>
+                <li><a href="moteurs.html">Moteurs</a></li>
                 <li><a href="puits.html">Puits</a></li>
-                <li><a href="analyse.html">Analyse et traitement d'eau</a></li>
-                <li><a href="pompes.html">Pompes et relevage</a></li>
+                <li><a href="analyse.html">Traitement d'eau</a></li>
+                <li><a href="pompes.html">Pompes</a></li>
                 <li><a href="pompage.html">Postes de pompage</a></li>
-              </ul>
-            </div>
-
-            <div class="col-6 col-md-4">
-              <h5 class="mb-3 text-white">Informations</h5>
-              <ul class="list-unstyled">
-                <li><a href="privacy.html">Politique de confidentialité</a></li>
               </ul>
             </div>
 
@@ -1072,10 +1172,27 @@ Aujourd’hui, sous une même identité familiale, nous réunissons des services
         </div>
       </div>
 
-      <div class="col-lg-2">
-        <div class="footer-cta">
-          <h5 class="mb-3 text-white">Besoin d’aide&nbsp;?</h5>
-          <a href="index.html#contact" class="btn btn-outline-light">Nous contacter</a>
+      <div class="col-lg-4">
+        <div class="footer-contact-details">
+          <h5 class="mb-3 text-white">Nous joindre</h5>
+          
+          <p class="mb-3">
+            <strong>Do-Mar Électrique Inc.</strong><br>
+            1136 King Est<br>
+            Sherbrooke, Québec J1G 1E4
+          </p>
+          
+          <p class="mb-3">
+            <i class="bi bi-telephone me-2"></i> <a href="tel:+18195632234">819-563-2234</a><br>
+            <i class="bi bi-envelope me-2"></i> <a href="mailto:info@do-marelectrique.com">info@do-marelectrique.com</a>
+          </p>
+
+          <div class="footer-hours-box">
+            <strong class="text-white d-block mb-1">Heures d’ouverture :</strong>
+            <span class="d-block">Lundi - Jeudi : 8 h - 12 h / 13 h - 17 h</span>
+            <span class="d-block">Vendredi : 8 h - 12 h / 13 h - 16 h</span>
+          </div>
+          
         </div>
       </div>
 
@@ -1088,7 +1205,7 @@ Aujourd’hui, sous une même identité familiale, nous réunissons des services
         <div class="col-12">
           <div class="footer-bottom-content pt-3 border-top border-secondary">
             <p class="mb-0 text-center text-md-start text-white-50">
-              © <span class="sitename">DO-MAR</span> — Tous droits réservés.
+             2026 © <span class="sitename">DO-MAR</span> - Tous droits réservés. Conception web par <a href="https://roymarketing.ca/">Roy Marketing</a>
             </p>
           </div>
         </div>
@@ -1097,8 +1214,6 @@ Aujourd’hui, sous une même identité familiale, nous réunissons des services
   </div>
 
 </footer>
-
-
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <div id="preloader"></div>
