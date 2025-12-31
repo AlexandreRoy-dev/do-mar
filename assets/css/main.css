@@ -4878,3 +4878,162 @@ section,
   height: auto;
   width: auto;
 }
+/* ==========================================================================
+   Fix for Contact Info Section (Typography & Alignment)
+   ========================================================================== */
+
+/* 1. Flexbox Layout: Ensures the icon stays left and text aligns next to it */
+.contact-info-wrapper .contact-row {
+  display: flex;
+  align-items: flex-start; /* Aligns icon with the first line of text */
+  justify-content: flex-start; /* Force start alignment */
+  margin-bottom: 24px;
+  text-align: left !important; /* Force text to align left */
+}
+
+/* 2. Icon Styling */
+.contact-info-wrapper .contact-row i {
+  font-size: 1.4rem; /* Icon size */
+  width: 30px; /* Fixed width to align text vertically if icon changes */
+  margin-right: 10px; /* Space between icon and text */
+  color: var(--primary-color); /* Uses your main blue */
+  flex-shrink: 0; /* Prevents icon from getting squashed */
+  margin-top: 2px; /* Micro-adjustment to align with text cap-height */
+}
+
+/* 3. Text Container Fix */
+.contact-info-wrapper .contact-row div {
+  width: 100%; /* Ensures text takes available space */
+}
+
+/* 4. Title (h6) - Size & Spacing */
+.contact-info-wrapper .contact-row h6 {
+  font-size: 1rem !important; /* Force same size as body text */
+  font-weight: 700; /* Keep it bold to distinguish it */
+  margin-bottom: 4px; /* Small space below title */
+  line-height: 1.4;
+  color: #000;
+  text-transform: uppercase; /* Optional: adds a bit of clean style */
+  letter-spacing: 0.5px;
+}
+
+/* 5. Body Text (p) & Links - Size & Spacing */
+.contact-info-wrapper .contact-row p,
+.contact-info-wrapper .contact-row a {
+  font-size: 1rem !important; /* Force same size as title */
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 0;
+  color: #444;
+  text-decoration: none;
+  display: block; /* Ensures lines break correctly */
+}
+
+/* Link Hover Effect */
+.contact-info-wrapper .contact-row a:hover {
+  color: var(--primary-color);
+}
+
+/* 6. MOBILE SPECIFIC FORCE LEFT ALIGNMENT */
+@media (max-width: 768px) {
+  .cta-hero-content {
+    text-align: left !important; /* Overrides any parent centering */
+  }
+
+  .contact-info-wrapper {
+    margin-top: 30px;
+    padding-left: 0;
+  }
+
+  .contact-info-wrapper .contact-row {
+    justify-content: flex-start;
+  }
+}
+
+/* ==========================================================================
+   URGENT FIXES: MENU & CONTACT ALIGNMENT
+   (Paste at the very bottom of main.css)
+   ========================================================================== */
+
+/* --- 1. FIX DROPDOWN MENU VISIBILITY (White text on White background issue) --- */
+
+/* Force all links inside the dropdown (ul ul) to be dark grey by default */
+#navmenu ul li.dropdown ul li a {
+    color: #333333 !important; /* Dark text */
+    background-color: #ffffff !important; /* White background */
+    font-weight: 500 !important;
+    text-transform: none !important;
+    padding: 10px 20px !important;
+    display: block !important;
+}
+
+/* Fix the Hover and Active state for dropdown links */
+#navmenu ul li.dropdown ul li a:hover,
+#navmenu ul li.dropdown ul li a.active {
+    color: var(--primary-color, #0ea2bd) !important; /* Uses your Blue variable, or defaults to teal */
+    background-color: #f6f6f6 !important; /* Light grey background on hover */
+    text-decoration: none !important;
+}
+
+
+/* --- 2. FIX CONTACT INFO ALIGNMENT (Force Left Align on Mobile & Desktop) --- */
+
+/* Target the container specifically within the contact section */
+#contact .contact-info-wrapper .contact-row {
+    display: flex !important;
+    align-items: flex-start !important; /* Aligns icon with top of text */
+    justify-content: flex-start !important; /* Force content to start (left) */
+    text-align: left !important; /* Force text alignment left */
+    margin-bottom: 25px !important;
+    width: 100% !important;
+}
+
+/* Force the icon to stay on the left */
+#contact .contact-info-wrapper .contact-row i {
+    margin-right: 15px !important;
+    font-size: 1.25rem !important; /* Consistent icon size */
+    color: var(--primary-color, #0ea2bd) !important;
+    flex-shrink: 0 !important; /* Prevents icon from squishing */
+    line-height: 1 !important;
+    margin-top: 5px !important; /* Visual alignment with text */
+}
+
+/* Force the text container to align left */
+#contact .contact-info-wrapper .contact-row div {
+    text-align: left !important;
+    width: 100% !important;
+}
+
+/* Force Titles (Notre adresse, etc.) to be consistent size */
+#contact .contact-info-wrapper .contact-row h6 {
+    font-size: 1rem !important; /* 16px */
+    font-weight: 700 !important;
+    margin-bottom: 5px !important;
+    text-align: left !important;
+    display: block !important;
+}
+
+/* Force Body text to be consistent size */
+#contact .contact-info-wrapper .contact-row p,
+#contact .contact-info-wrapper .contact-row p a {
+    font-size: 1rem !important; /* 16px - Same as title */
+    line-height: 1.5 !important;
+    margin: 0 !important;
+    text-align: left !important;
+}
+
+/* --- 3. MOBILE SPECIFIC OVERRIDES --- */
+@media (max-width: 991px) {
+    /* Force the Hero Content container to align left on mobile */
+    #contact .cta-hero-content {
+        text-align: left !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    /* Ensure the wrapper doesn't have padding pushing it around */
+    #contact .contact-info-wrapper {
+        padding: 0 !important;
+        margin-top: 30px !important;
+    }
+}
