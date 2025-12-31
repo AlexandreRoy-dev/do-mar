@@ -128,3 +128,48 @@
   new PureCounter();
 
 })();
+
+/**
+ * Cookie Consent Logic
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  const cookieBanner = document.getElementById('cookie-banner');
+  const acceptBtn = document.getElementById('cookie-accept');
+  const declineBtn = document.getElementById('cookie-decline');
+
+  // 1. Check if user has already made a choice
+  const consent = localStorage.getItem('domar_cookie_consent');
+
+  // 2. If no choice found, show the banner after a short delay
+  if (!consent) {
+    setTimeout(() => {
+      cookieBanner.classList.add('show');
+    }, 1000); // 1 second delay
+  }
+
+  // 3. Handle Accept
+  if (acceptBtn) {
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem('domar_cookie_consent', 'accepted');
+      hideBanner();
+      // Optional: Load analytics scripts here
+    });
+  }
+
+  // 4. Handle Decline
+  if (declineBtn) {
+    declineBtn.addEventListener('click', () => {
+      localStorage.setItem('domar_cookie_consent', 'declined');
+      hideBanner();
+    });
+  }
+
+  // Helper function to hide banner with animation
+  function hideBanner() {
+    cookieBanner.classList.remove('show');
+    // Remove from DOM after transition ensures no layout shift
+    setTimeout(() => {
+      cookieBanner.style.display = 'none';
+    }, 500);
+  }
+});
