@@ -143,14 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
     banner.setAttribute('role', 'status');
     banner.setAttribute('aria-live', 'polite');
     banner.innerHTML = `
-      <span class="closure-banner__flag" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50" width="24" height="12" role="img" aria-label="Drapeau du Canada">
-          <rect width="100" height="50" fill="#ffffff"/>
-          <rect width="25" height="50" fill="#c8102e"/>
-          <rect x="75" width="25" height="50" fill="#c8102e"/>
-          <path fill="#c8102e" d="M50 7.5 52.2 14h6.8l-5.5 4 2.1 6.5L50 21.5 44.4 24.5l2.1-6.5-5.5-4h6.8z"/>
-        </svg>
-      </span>
       <span class="closure-banner__text">Notez que nous serons fermés le 3 juillet pour la Fête du Canada</span>
     `;
 

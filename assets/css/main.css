@@ -156,19 +156,6 @@ h6 {
   line-height: 1.35;
 }
 
-.closure-banner__flag {
-  flex-shrink: 0;
-  display: inline-flex;
-}
-
-.closure-banner__flag svg {
-  display: block;
-  width: 24px;
-  height: auto;
-  border-radius: 1px;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
-}
-
 body.has-closure-banner #header.fixed-top {
   top: var(--closure-banner-height, 36px);
 }
@@ -177,11 +164,6 @@ body.has-closure-banner #header.fixed-top {
   .closure-banner {
     font-size: 0.78rem;
     padding: 7px 12px;
-    gap: 8px;
-  }
-
-  .closure-banner__flag svg {
-    width: 20px;
   }
 }
 
