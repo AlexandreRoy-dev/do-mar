@@ -134,6 +134,58 @@ h6 {
 }
 
 /*--------------------------------------------------------------
+# Holiday Closure Banner
+--------------------------------------------------------------*/
+.closure-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  background-color: #c8102e;
+  color: #ffffff;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: var(--default-font);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.closure-banner__flag {
+  flex-shrink: 0;
+  display: inline-flex;
+}
+
+.closure-banner__flag svg {
+  display: block;
+  width: 24px;
+  height: auto;
+  border-radius: 1px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+body.has-closure-banner #header.fixed-top {
+  top: var(--closure-banner-height, 36px);
+}
+
+@media (max-width: 576px) {
+  .closure-banner {
+    font-size: 0.78rem;
+    padding: 7px 12px;
+    gap: 8px;
+  }
+
+  .closure-banner__flag svg {
+    width: 20px;
+  }
+}
+
+/*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
 .header {
