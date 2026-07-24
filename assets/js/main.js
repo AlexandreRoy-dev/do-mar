@@ -130,32 +130,61 @@
 })();
 
 /**
- * Canada Day closure banner (auto-hides after July 3, 2026)
+ * Holiday / vacation closure banners (auto-show during each period)
+ * - Fête du Canada : 3 juillet
+ * - Vacances estivales : 17 juillet midi → 31 juillet inclusivement
+ * - Vacances hivernales : 18 décembre midi → 1er janvier inclusivement
  */
 document.addEventListener('DOMContentLoaded', () => {
-  const closureEnd = new Date('2026-07-04T00:00:00');
   const header = document.querySelector('#header');
+  if (!header) return;
 
-  if (new Date() < closureEnd && header) {
-    const banner = document.createElement('div');
-    banner.id = 'closure-banner';
-    banner.className = 'closure-banner';
-    banner.setAttribute('role', 'status');
-    banner.setAttribute('aria-live', 'polite');
-    banner.innerHTML = `
-      <span class="closure-banner__text">Notez que nous serons fermés le 3 juillet pour la Fête du Canada</span>
-    `;
+  const now = new Date();
+  const year = now.getFullYear();
 
-    document.body.insertBefore(banner, header);
-    document.body.classList.add('has-closure-banner');
+  const closures = [
+    {
+      start: new Date(year, 5, 20), // 20 juin
+      end: new Date(year, 6, 4), // fin du 3 juillet
+      message: 'Notez que nous serons fermés le 3 juillet pour la Fête du Canada'
+    },
+    {
+      start: new Date(year, 6, 4), // dès le 4 juillet
+      end: new Date(year, 7, 1), // fin du 31 juillet
+      message: 'Vacances estivales : nous serons fermés du 17 juillet midi au 31 juillet inclusivement'
+    },
+    {
+      start: new Date(year, 11, 1), // 1er décembre
+      end: new Date(year + 1, 0, 2), // fin du 1er janvier
+      message: 'Vacances hivernales : nous serons fermés du 18 décembre midi au 1er janvier inclusivement'
+    },
+    // Couverture début janvier (période commencée l’année précédente)
+    {
+      start: new Date(year - 1, 11, 1),
+      end: new Date(year, 0, 2),
+      message: 'Vacances hivernales : nous serons fermés du 18 décembre midi au 1er janvier inclusivement'
+    }
+  ];
 
-    const setBannerHeight = () => {
-      document.documentElement.style.setProperty('--closure-banner-height', `${banner.offsetHeight}px`);
-    };
+  const active = closures.find((c) => now >= c.start && now < c.end);
+  if (!active) return;
 
-    setBannerHeight();
-    window.addEventListener('resize', setBannerHeight);
-  }
+  const banner = document.createElement('div');
+  banner.id = 'closure-banner';
+  banner.className = 'closure-banner';
+  banner.setAttribute('role', 'status');
+  banner.setAttribute('aria-live', 'polite');
+  banner.innerHTML = `<span class="closure-banner__text">${active.message}</span>`;
+
+  document.body.insertBefore(banner, header);
+  document.body.classList.add('has-closure-banner');
+
+  const setBannerHeight = () => {
+    document.documentElement.style.setProperty('--closure-banner-height', `${banner.offsetHeight}px`);
+  };
+
+  setBannerHeight();
+  window.addEventListener('resize', setBannerHeight);
 });
 
 /**
